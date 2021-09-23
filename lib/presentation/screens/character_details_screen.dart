@@ -67,7 +67,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
                       characterInfo(
                           'Actor/Actress : ', widget.character.acotrName),
                       buildDivider(235),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       BlocBuilder<CharactersCubit, CharactersState>(
                         builder: (ctx, state) => checkIfQuotesAreLoaded(state),
                       ),
@@ -92,7 +92,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
       flexibleSpace: FlexibleSpaceBar(
         title: Text(
           widget.character.nickName,
-          style: TextStyle(
+          style: const TextStyle(
             color: MyColors.myWhite,
             fontSize: 18,
           ),
@@ -117,8 +117,8 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
       text: TextSpan(
         children: [
           TextSpan(
-            text: '$title',
-            style: TextStyle(
+            text: title,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
               color: MyColors.myWhite,
@@ -126,7 +126,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
           ),
           TextSpan(
             text: value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               color: MyColors.myWhite,
             ),
@@ -155,7 +155,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
 
   Widget displayRandomQuoteOrEmptySpace(QuotesLoaded state) {
     var quotes = (state).quotes;
-    if (quotes.length != 0) {
+    if (quotes.isNotEmpty) {
       int randomIndexOfQuote = Random().nextInt(quotes.length - 1);
       return Center(
         child: DefaultTextStyle(
@@ -176,7 +176,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
             animatedTexts: [
               TypewriterAnimatedText(
                 quotes[randomIndexOfQuote].quote,
-                speed: Duration(milliseconds: 150),
+                speed: const Duration(milliseconds: 150),
               ),
             ],
           ),
@@ -188,7 +188,7 @@ class _CharacterDetailsScreeState extends State<CharacterDetailsScree> {
   }
 
   Widget buildProgressIndicator() {
-    return Center(
+    return const Center(
       child: CircularProgressIndicator(
         color: MyColors.myYellow,
       ),

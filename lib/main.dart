@@ -9,7 +9,7 @@ void main() {
 
 class BreakingBadApp extends StatelessWidget {
   final AppRoute appRoute;
-  BreakingBadApp({required this.appRoute});
+  const BreakingBadApp({Key? key, required this.appRoute}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

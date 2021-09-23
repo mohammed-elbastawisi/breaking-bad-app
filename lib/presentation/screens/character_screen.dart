@@ -33,7 +33,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
         title: _isSearching ? _buildSearchField() : _buildAppBarTitle(),
         actions: _buildAppBarAction(),
         leading: _isSearching
-            ? BackButton(
+            ? const BackButton(
                 color: MyColors.myGrey,
               )
             : Container(),
@@ -49,7 +49,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
         allCharacters = (state).character;
         return buildLoadedListWidget();
       } else {
-        return Center(
+        return const Center(
           child: CircularProgressIndicator(
             color: MyColors.myYellow,
           ),
@@ -75,7 +75,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
 
   Widget buildCharacterList() {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 2 / 3,
         crossAxisSpacing: 1,
@@ -85,7 +85,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
           ? allCharacters.length
           : searchedForCharacter.length,
       shrinkWrap: true,
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       itemBuilder: (ctx, index) => CharacterItem(
           character: _searchTextController.text.isEmpty
               ? allCharacters[index]
@@ -97,7 +97,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
     return TextField(
       controller: _searchTextController,
       cursorColor: MyColors.myGrey,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         border: InputBorder.none,
         hintText: 'Fined a character...',
         hintStyle: TextStyle(
@@ -105,7 +105,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
           fontSize: 18,
         ),
       ),
-      style: TextStyle(
+      style: const TextStyle(
         color: MyColors.myGrey,
         fontSize: 18,
       ),
@@ -116,7 +116,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
   }
 
   Widget _buildAppBarTitle() {
-    return Text(
+    return const Text(
       'Characters',
       style: TextStyle(color: MyColors.myGrey),
     );
@@ -142,7 +142,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
             _clearSearch();
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.clear,
             color: MyColors.myGrey,
           ),
@@ -152,7 +152,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
       return [
         IconButton(
           onPressed: _startSearch,
-          icon: Icon(
+          icon: const Icon(
             Icons.search,
             color: MyColors.myGrey,
           ),

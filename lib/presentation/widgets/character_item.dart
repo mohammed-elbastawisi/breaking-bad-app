@@ -12,8 +12,8 @@ class CharacterItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-      padding: EdgeInsetsDirectional.all(4),
+      margin: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+      padding: const EdgeInsetsDirectional.all(4),
       decoration: BoxDecoration(
         color: MyColors.myWhite,
         borderRadius: BorderRadius.circular(8),
@@ -46,7 +46,7 @@ class CharacterItem extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Text(
               character.name,
-              style: TextStyle(
+              style: const TextStyle(
                 height: 1.3,
                 color: MyColors.myWhite,
                 fontWeight: FontWeight.bold,
